@@ -278,7 +278,7 @@ public struct SQLDropConstraint: SQLExpression {
 
     public func serialize(to serializer: inout SQLSerializer) {
         if serializer.dialect.name == "mysql" {
-            serializer.write("KEY ")
+            serializer.write("FOREIGN KEY ")
         } else {
             serializer.write("CONSTRAINT ")
         }
